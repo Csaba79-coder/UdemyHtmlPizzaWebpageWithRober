@@ -126,7 +126,23 @@
             </div>
         </div>
 
-        <div id="contact"></div>
+        <div id="contact" style="visibility:hidden;top:400px;left:25%;position:absolute;">
+            <h1 style="width:100%;text-align:center;color:white;">Contact</h1>
+        
+            <div style="width:800px;clear:both;">
+                <form action="javascript:displayAlert()" method="post">
+                <ul style="list-style-type: none;">
+                <li style="color:white;">Email: <input type="text" id="email" class="formInputField"></li>
+                <li>&nbsp;</li>
+                <li style="color:white;">Subject: <input type="text" id="subject" class="formInputField"></li>
+                <li>&nbsp;</li>
+                <li style="color:white;">Body: <textarea rows="4" cols="50" id="body" class="formInputField"></textarea></li>
+                <li>&nbsp;</li>
+                <li><input type="submit" name="submit" value="Submit"></li>
+                </ul>
+                </form>
+            </div>
+        </div>
 
         <style>
             .menuItems{
@@ -155,7 +171,6 @@
         </style>
 
         <script>
-            
             function showPageSection(id){
                 var listOfIds = ["home", "about-us", "menu", "contact"];
                 
@@ -186,7 +201,6 @@
             var alertMessage = "Item: " + item + " Pizza" + "\n" + "Price: " + amount;
             alert(alertMessage);
             }
-
         </script>
  
         <footer></footer>
