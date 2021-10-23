@@ -74,7 +74,57 @@
             </div>
         </div>
 
-        <div id="menu"></div>
+        <div id="menu" style="visibility:hidden;top:400px;left:15%;position:absolute;width:70%;height:20%;">
+            <h1 style="text-align:center;width:100%;color:white;">Menu</h1>
+        
+            <div class="row">
+        
+                <div class="card text-center">
+                    <img class="card-img-top" src="images/slice1.png" alt="Card image">
+                    <div class="card-body">
+                    <h2 id="cheese" class="card-title">Cheese</h2>
+                    <h4 class="card-text">Regular slice with sauce and cheese</h4>
+                    <a id="cheesePrice" href="#" onclick="itemOnClick('cheese', 'cheesePrice')" class="btn btn-primary">€3.00</a>
+                    </div>
+                </div>
+            
+                <div class="card text-center">
+                    <img class="card-img-top" src="images/slice2.png" alt="Card image">
+                    <div class="card-body">
+                    <h2 class="card-title" id="pepperoni">Pepperoni</h2>
+                    <h4 class="card-text">Pizza with pepperoni topping</h4>
+                    <a href="#" id="pepperoniPrice" onclick="itemOnClick('pepperoni', 'pepperoniPrice')" class="btn btn-primary">€4.00</a>
+                    </div>
+                </div>
+            
+                <div class="card text-center">
+                    <img class="card-img-top" src="images/slice3.png" alt="Card image">
+                    <div class="card-body">
+                    <h2 class="card-title" id="mushroom">Mushroom</h2>
+                    <h4 class="card-text">Pizza with mushrooms</h4>
+                    <a href="#" id="mushroomPrice" onclick="itemOnClick('mushroom', 'mushroomPrice')" class="btn btn-primary">€3.50</a>
+                    </div>
+                </div>
+            
+                <div class="card text-center">
+                    <img class="card-img-top" src="images/slice4.png" alt="Card image">
+                    <div class="card-body">
+                    <h2 class="card-title" id="veggie">Veggie</h2>
+                    <h4 class="card-text">Pizza with veggie toppings</h4>
+                    <a href="#" id="veggiePrice" onclick="itemOnClick('veggie', 'veggiePrice')" class="btn btn-primary">€3.50</a>
+                    </div>
+                </div>
+            
+                <div class="card text-center">
+                    <img class="card-img-top" src="images/slice5.png" alt="Card image">
+                    <div class="card-body">
+                        <h2 class="card-title" id="bbq">BBQ</h2>
+                        <h4 class="card-text">Pizza with chicken and BBQ sauce</h4>
+                        <a href="#" id="bbqPrice" onclick="itemOnClick('bbq', 'bbqPrice')" class="btn btn-primary">$4.50</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div id="contact"></div>
 
@@ -82,19 +132,61 @@
             .menuItems{
                 margin-right: 10%;
             }
+
+            .card{
+                width: 20%;
+                height: 500px;
+                background-color: rgba(0,0,0,0);
+            }
+
+            .card-img-top{
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+
+            .card-title, .card-text{
+                color: white;
+            }
+
+            .btn{
+                width: 80%;
+            }
         </style>
 
         <script>
+            
             function showPageSection(id){
                 var listOfIds = ["home", "about-us", "menu", "contact"];
-                for(i=0; i<listOfIds.length; i++) {
-                    if(listOfIds[i] == id) {
+                
+                for(i = 0; i < listOfIds.length; i++){
+                    if(listOfIds[i] == id){
                         document.getElementById(id).style.visibility = "visible";
                     } else {
                         document.getElementById(listOfIds[i]).style.visibility = "hidden";
                     }
                 }
             }
+
+            function displayAlert(){
+            var emailAddress = document.getElementById("email").value;
+            var subjectLine = document.getElementById("subject").value;
+            var messageBody = document.getElementById("body").value;
+
+            var alertMessage = "Email: " + emailAddress + "\n" +
+                                "Subject: " + subjectLine + "\n" +
+                                "Body: " + messageBody;
+
+                alert(alertMessage);
+            }
+
+            function itemOnClick(idOfItem, idOfAmount){
+            var item = document.getElementById(idOfItem).innerHTML;
+            var amount = document.getElementById(idOfAmount).innerHTML;
+            var alertMessage = "Item: " + item + " Pizza" + "\n" + "Price: " + amount;
+            alert(alertMessage);
+            }
+
         </script>
  
         <footer></footer>
