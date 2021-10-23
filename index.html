@@ -30,23 +30,23 @@
 
     <!-- nav is a container for menu! -->
         <nav id="header" style="font-size: 2vw; position:relative; top: 25%; width: 100%; left: 20%;">
-            <a href="#/home" class="menuItems">HOME</a>
-            <a href="#/about-us" class="menuItems">ABOUT US</a>
-            <a href="#/menu" class="menuItems">MENU</a>
-            <a href="#/contact" class="menuItems">CONTACT</a>
+            <a href="#/home" class="menuItems" onclick="showPageSection('home')">HOME</a>
+            <a href="#/about-us" class="menuItems" onclick="showPageSection('about-us')">ABOUT US</a>
+            <a href="#/menu" class="menuItems" onclick="showPageSection('menu')">MENU</a>
+            <a href="#/contact" class="menuItems" onclick="showPageSection('contact')">CONTACT</a>
         </nav>
 
         <div id="home">
                 <div class="position-relative" style="top: 90px;">
                     <div id="carousel-id" class="carousel slide" data-ride="carousel">
                         <div class="carousel-item active">
-                            <img src="images/slide.png" alt="1" width="100%; height: 500px;">
+                            <img src="images/slide.png" alt="1" style="width: 100%; height: 500px;">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/slide2.png" alt="2" width="100%; height: 500px;">
+                            <img src="images/slide2.png" alt="2" style="width: 100%; height: 500px;">
                         </div>
                         <div class="carousel-item">
-                            <img src="images/slide3.png" alt="3" width="100%; height: 500px;">
+                            <img src="images/slide3.png" alt="3" style="width: 100%; height: 500px;">
                         </div>
                         <a class="carousel-control-prev" href="#carousel-id" data-slide="prev">
                             <span class="carousel-control-prev-icon"></span>
@@ -58,7 +58,21 @@
                 </div>
         </div>
 
-        <div id="about-us"></div>
+        <div id="about-us" style="font-size: 2vw; visibility: hidden; top: 400px; position: absolute;">
+            <h1 style="left:80%; position:relative; color:white">About Us</h1>
+            <div class="row">
+                <div style="top:50px; left: 40%; position: relative; color: white;">
+                    <img src="images/about_image.png" alt="about" style="float:right; top: 50px; left: 100px; position: relative; height: 300px; width: 300px;">
+                    <p>Why should you come here?</p>
+                    <ul>
+                        <li>Great deal</li>
+                        <li>Delicious food</li>
+                        <li>Fast service</li>
+                    </ul>
+                    <p style="top: 80px; left: 100px; position: relative; color: white; clear:both">We are a pizzeria that serve great food at an exellent price.</p>
+                </div>
+            </div>
+        </div>
 
         <div id="menu"></div>
 
@@ -69,6 +83,19 @@
                 margin-right: 10%;
             }
         </style>
+
+        <script>
+            function showPageSection(id){
+                var listOfIds = ["home", "about-us", "menu", "contact"];
+                for(i=0; i<listOfIds.length; i++) {
+                    if(listOfIds[i] == id) {
+                        document.getElementById(id).style.visibility = "visible";
+                    } else {
+                        document.getElementById(listOfIds[i]).style.visibility = "hidden";
+                    }
+                }
+            }
+        </script>
  
         <footer></footer>
     </body>
